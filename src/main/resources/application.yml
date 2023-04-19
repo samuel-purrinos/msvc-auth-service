@@ -1,0 +1,23 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: AUTH-SERVICE
+  config:
+    import: optional:configserver:http://localhost:8085
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jws-algorithms:
+jwt:
+  secret: secret
+
+admin-paths:
+  paths:
+    -
+      uri: "/api/v1/users"
+      method: "POST"
+
+
